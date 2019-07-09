@@ -4,6 +4,11 @@ from model_definition import create_model
 from config import EPOCHS, BATCH_SIZE, model_dir
 from prepare_data import get_datasets
 
+# GPU settings
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
 
 train_images, train_labels, \
 valid_images, valid_labels, \
