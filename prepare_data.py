@@ -13,12 +13,14 @@ def get_datasets():
 
     train_images = train_images.reshape((-1, 28, 28, 1))
     valid_images = valid_images.reshape((-1, 28, 28, 1))
+    test_images = test_images.reshape((-1, 28, 28, 1))
 
     num_of_train_images = train_images.shape[0]
 
     # Normalize pixel values to be between 0 and 1
     train_images = train_images / 255.0
     valid_images = valid_images / 255.0
+    test_images = test_images / 255.0
 
     return train_images, train_labels, \
            valid_images, valid_labels, \
