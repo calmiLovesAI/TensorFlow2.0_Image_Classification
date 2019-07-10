@@ -19,7 +19,6 @@ model = create_model()
 
 model.fit_generator(train_generator,
                     epochs=EPOCHS,
-                    batch_size=BATCH_SIZE,
                     steps_per_epoch=train_num // BATCH_SIZE,
                     validation_data=valid_generator,
                     validation_steps=valid_num // BATCH_SIZE
