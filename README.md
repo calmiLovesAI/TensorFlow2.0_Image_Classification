@@ -35,7 +35,7 @@ to train the network on your image dataset, the final model will be stored. You 
 ### Evaluate
 To evaluate the model's performance on the test dataset, you can run `evaluate.py`.<br/>
 
-The structure of the network is defined in `model_difinition.py`, you can change the network structure to whatever you like.<br/>
+The structure of the network is defined in `model_definition.py`, you can change the network structure to whatever you like.<br/>
 
 ## References
 Part of the code is referenced from the offcial tutorial https://tensorflow.google.cn/beta/tutorials/images/intro_to_cnns.
