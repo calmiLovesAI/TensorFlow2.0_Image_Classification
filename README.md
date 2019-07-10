@@ -1,4 +1,4 @@
-# TensorFlow2.0-Image_Classification
+# TensorFlow2.0_Image_Classification
 The classification of images with TensorFlow_2.0
 
 ## How to use
