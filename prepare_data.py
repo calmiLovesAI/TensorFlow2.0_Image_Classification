@@ -1,28 +1,48 @@
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-
+import config
 
 def get_datasets():
-    # Download the dataset
-    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
+    # Preprocess the dataset
+    train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+        rescale=1.0 / 255.0
+    )
 
-    # Divide the training dataset into training dataset and validation dataset
-    train_images, valid_images, train_labels, valid_labels = train_test_split(train_images, train_labels,
-                                                                              test_size=0.2,
-                                                                              random_state=1)
+    train_generator = train_datagen.flow_from_directory(config.train_dir,
+                                                        target_size=(config.image_height, config.image_width),
+                                                        batch_size=config.BATCH_SIZE,
+                                                        seed=1,
+                                                        shuffle=True,
+                                                        class_mode="categorical")
 
-    train_images = train_images.reshape((-1, 28, 28, 1))
-    valid_images = valid_images.reshape((-1, 28, 28, 1))
-    test_images = test_images.reshape((-1, 28, 28, 1))
+    valid_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+        rescale=1.0 /255.0
+    )
+    valid_generator = valid_datagen.flow_from_directory(config.valid_dir,
+                                                        target_size=(config.image_height, config.image_width),
+                                                        batch_size=config.BATCH_SIZE,
+                                                        seed=7,
+                                                        shuffle=True,
+                                                        class_mode="categorical"
+                                                        )
+    test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+        rescale=1.0 /255.0
+    )
+    test_generator = test_datagen.flow_from_directory(config.test_dir,
+                                                        target_size=(config.image_height, config.image_width),
+                                                        batch_size=config.BATCH_SIZE,
+                                                        seed=7,
+                                                        shuffle=True,
+                                                        class_mode="categorical"
+                                                        )
 
-    num_of_train_images = train_images.shape[0]
 
-    # Normalize pixel values to be between 0 and 1
-    train_images = train_images / 255.0
-    valid_images = valid_images / 255.0
-    test_images = test_images / 255.0
+    train_num = train_generator.samples
+    valid_num = valid_generator.samples
+    test_num = test_generator.samples
 
-    return train_images, train_labels, \
-           valid_images, valid_labels, \
-           test_images, test_labels, \
-           num_of_train_images
+
+    return train_generator, \
+           valid_generator, \
+           test_generator, \
+           train_num, valid_num, test_num
