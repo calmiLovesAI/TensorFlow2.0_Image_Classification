@@ -10,6 +10,7 @@ def get_datasets():
 
     train_generator = train_datagen.flow_from_directory(config.train_dir,
                                                         target_size=(config.image_height, config.image_width),
+                                                        color_mode="rgb",
                                                         batch_size=config.BATCH_SIZE,
                                                         seed=1,
                                                         shuffle=True,
@@ -20,6 +21,7 @@ def get_datasets():
     )
     valid_generator = valid_datagen.flow_from_directory(config.valid_dir,
                                                         target_size=(config.image_height, config.image_width),
+                                                        color_mode="rgb",
                                                         batch_size=config.BATCH_SIZE,
                                                         seed=7,
                                                         shuffle=True,
@@ -30,6 +32,7 @@ def get_datasets():
     )
     test_generator = test_datagen.flow_from_directory(config.test_dir,
                                                         target_size=(config.image_height, config.image_width),
+                                                        color_mode="rgb",
                                                         batch_size=config.BATCH_SIZE,
                                                         seed=7,
                                                         shuffle=True,

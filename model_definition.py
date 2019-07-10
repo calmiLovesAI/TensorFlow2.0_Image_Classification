@@ -22,7 +22,7 @@ def create_model():
                               activation=tf.keras.activations.softmax)
     ])
 
-    model.compile(loss=tf.keras.losses.sparse_categorical_crossentropy,
+    model.compile(loss=tf.keras.losses.categorical_crossentropy,
                   optimizer=tf.keras.optimizers.Adam(),
                   metrics=['accuracy'])
 
