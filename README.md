@@ -3,6 +3,7 @@ The classification of images with TensorFlow_2.0
 
 ## How to use
 ### Requirements
+**TensorFlow version: 2.0.0-beta1**<br/> 
 The file directory of the dataset should look like this: <br/>
 ```
 ${dataset_root}
