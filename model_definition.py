@@ -23,7 +23,7 @@ def create_model():
     ])
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
-                  optimizer=tf.keras.optimizers.SGD(learning_rate=0.001),
+                  optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
                   metrics=['accuracy'])
 
     return model
