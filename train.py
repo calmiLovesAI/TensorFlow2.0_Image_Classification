@@ -13,6 +13,9 @@ if gpus:
 train_generator, valid_generator, test_generator, \
 train_num, valid_num, test_num = get_datasets()
 
+# Use command tensorboard --logdir "log" to start tensorboard
+tensorboard = tf.keras.callbacks.TensorBoard(log_dir='log')
+callback_list = [tensorboard]
 
 # start training
 model = create_model()
@@ -21,8 +24,8 @@ model.fit_generator(train_generator,
                     epochs=EPOCHS,
                     steps_per_epoch=train_num // BATCH_SIZE,
                     validation_data=valid_generator,
-                    validation_steps=valid_num // BATCH_SIZE
-                    )
+                    validation_steps=valid_num // BATCH_SIZE,
+                    callbacks=callback_list)
 
 # save the whole model
 model.save(model_dir)
