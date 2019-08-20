@@ -1,5 +1,5 @@
-# TensorFlow2.0_Image_Classification
-The classification of images with TensorFlow_2.0
+# TensorFlow2.0_Image_Classification(include AlexNet and VGGNet)
+This project uses TensorFlow2.0 for image classification tasks.
 
 ## How to use
 ### Requirements
@@ -38,4 +38,5 @@ To evaluate the model's performance on the test dataset, you can run `evaluate.p
 The structure of the network is defined in `model_definition.py`, you can change the network structure to whatever you like.<br/>
 
 ## References
-Part of the code is referenced from the offcial tutorial https://tensorflow.google.cn/beta/tutorials/images/intro_to_cnns.
+1. AlexNet : http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf
+2. VGG : https://arxiv.org/abs/1409.1556
