@@ -1,6 +1,7 @@
 import tensorflow as tf
 from config import NUM_CLASSES, image_width, image_height, channels
 
+
 def AlexNet():
     model = tf.keras.Sequential([
         # layer 1

@@ -110,6 +110,7 @@ def VGG19():
                                         strides=2,
                                         padding='same'))
 
+    model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(units=4096,
                                     activation=tf.keras.activations.relu))
     model.add(tf.keras.layers.Dense(units=4096,
