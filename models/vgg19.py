@@ -1,5 +1,5 @@
 import tensorflow as tf
-from config import NUM_CLASSES
+from config import *
 
 
 def VGG19():
@@ -9,7 +9,8 @@ def VGG19():
                                      kernel_size=(3, 3),
                                      strides=1,
                                      padding='same',
-                                     activation=tf.keras.activations.relu))
+                                     activation=tf.keras.activations.relu,
+                                     input_shape=(image_height, image_width, channels)))
     model.add(tf.keras.layers.Conv2D(filters=64,
                                      kernel_size=(3, 3),
                                      strides=1,
