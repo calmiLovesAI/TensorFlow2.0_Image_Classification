@@ -1,12 +1,12 @@
 # some training parameters
-EPOCHS = 10
+EPOCHS = 50
 BATCH_SIZE = 8
-NUM_CLASSES = 2
-image_height = 256
-image_width = 256
+NUM_CLASSES = 5
+image_height = 224
+image_width = 224
 channels = 3
 model_dir = "image_classification_model.h5"
-train_dir = ""
-valid_dir = ""
-test_dir = ""
+train_dir = "dataset/train"
+valid_dir = "dataset/valid"
+test_dir = "dataset/test"
 test_image_path = ""

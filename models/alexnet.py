@@ -1,5 +1,5 @@
 import tensorflow as tf
-from config import NUM_CLASSES
+from config import NUM_CLASSES, image_width, image_height, channels
 
 def AlexNet():
     model = tf.keras.Sequential([
@@ -9,7 +9,7 @@ def AlexNet():
                                strides=4,
                                padding="valid",
                                activation=tf.keras.activations.relu,
-                               input_shape=(227, 227, 3)),
+                               input_shape=(image_height, image_width, channels)),
         tf.keras.layers.MaxPool2D(pool_size=(3, 3),
                                   strides=2,
                                   padding="valid"),
@@ -47,6 +47,7 @@ def AlexNet():
                                   padding="same"),
         tf.keras.layers.BatchNormalization(),
         # layer 6
+        tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(units=4096,
                               activation=tf.keras.activations.relu),
         tf.keras.layers.Dropout(rate=0.2),

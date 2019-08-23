@@ -7,8 +7,8 @@ from models.vgg16 import VGG16
 from models.vgg19 import VGG19
 
 def get_model():
-    model = AlexNet()
-    # model = VGG16()
+    # model = AlexNet()
+    model = VGG16()
     # model = VGG19()
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
@@ -31,6 +31,7 @@ if __name__ == '__main__':
     callback_list = [tensorboard]
 
     model = get_model()
+    model.summary()
 
     # start training
     model.fit_generator(train_generator,
