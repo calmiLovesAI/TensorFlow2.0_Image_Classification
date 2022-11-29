@@ -1,12 +1,15 @@
 # some training parameters
-EPOCHS = 50
-BATCH_SIZE = 8
-NUM_CLASSES = 5
-image_height = 224
-image_width = 224
+EPOCHS = 1
+BATCH_SIZE = 128
+NUM_CLASSES = 6
+image_height = 128
+image_width = 128
 channels = 3
-model_dir = "image_classification_model.h5"
-train_dir = "dataset/train"
-valid_dir = "dataset/valid"
-test_dir = "dataset/test"
-test_image_path = ""
+
+model_save_name = "Test"
+model_dir = "trained_models/salmon_crop_128/"+model_save_name+"/" # = save_dir
+
+train_dir = "/home/mirap/0_DATABASE/IMAS_Salmon/7_SalmonTest/train"
+valid_dir = "/home/mirap/0_DATABASE/IMAS_Salmon/7_SalmonTest/valid"
+test_dir = "/home/mirap/0_DATABASE/IMAS_Salmon/7_SalmonTest/test"
+test_image_path = "/home/mirap/0_DATABASE/IMAS_Salmon/7_SalmonTest/test/5/5_108.jpg"
