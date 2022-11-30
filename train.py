@@ -6,7 +6,8 @@ from test_single_image import test_single_image
 from prepare_data import get_datasets
 from models.pretrained_models import pretrained_model
 
-# USAGE: python train.py ((before this! please set config.py file))
+# USAGE: python train.py 
+#((before run! please set config.py file and line 26 of train.py))
 
 available_models=["Xception",
                   "EfficientNetB0", "EfficientNetB1", "EfficientNetB2",
