@@ -3,6 +3,7 @@ import tensorflow as tf
 import pandas as pd
 import config
 from test_single_image import test_single_image
+from evaluate import eval_model
 from prepare_data import get_datasets
 from models.pretrained_models import pretrained_model
 
@@ -23,8 +24,8 @@ available_models=["Xception",
                   ]
 
 def get_model():
-    model = pretrained_model(model_name="NASNetMobile",
-                            load_weight="imagenet")
+    model = pretrained_model(model_name="EfficientNetV2B1",
+                            load_weight=None)
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
                   optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
@@ -83,14 +84,7 @@ if __name__ == '__main__':
         hist_df.to_csv(f)
 
     # Evaluation
-    loss, acc, auc, precision, recall  = model.evaluate(test_generator,
-                                         batch_size=config.BATCH_SIZE,
-                                         steps=test_num // config.BATCH_SIZE)
-    print("result of ",config.model_dir)
-    print("The accuracy on test set is: {:6.3f}%".format(acc*100))
-    print("The auc on test set is: {:6.3f}%".format(auc*100))
-    print("The precision on test set is: {:6.3f}%".format(precision*100))
-    print("The recall on test set is: {:6.3f}%".format(recall*100))
+    eval_model(model)
 
     # detect for samples
     test_single_image(config.test_image_path, model)

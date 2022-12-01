@@ -13,9 +13,8 @@ def test_single_image(img_dir, model):
     img_tensor = tf.convert_to_tensor(img_numpy, tf.float32)
     # print(img_tensor.shape)
     img = img_tensor / 255.0
-    # prob = model(img)
-    prob = model(tf.image.resize(img,[224,224]))
-    print(prob)
+    prob = model(tf.image.resize(img,[config.image_width,config.image_height]))
+    # print(prob)
     classification = np.argmax(prob)
 
     # print result
