@@ -1,12 +1,12 @@
 
 import tensorflow as tf
-from config import *
+import config
 
 def pretrained_model(model_name, load_weight="imagenet"):
     # Xception (2017)
     if model_name == "Test":
         base_model = base_model = tf.keras.applications.MobileNetV2(
-            include_top=False,
+            include_top=True,
             weights=load_weight,
             input_tensor=None,
             input_shape=(config.image_width,config.image_height,3),
@@ -20,7 +20,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -32,7 +32,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -43,7 +43,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -54,7 +54,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -65,7 +65,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -76,7 +76,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -87,7 +87,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -98,7 +98,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -109,7 +109,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -121,7 +121,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -133,7 +133,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -145,7 +145,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -157,7 +157,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -169,7 +169,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -181,7 +181,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -193,7 +193,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -206,7 +206,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -217,7 +217,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -229,7 +229,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -240,7 +240,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -251,7 +251,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -263,7 +263,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -274,7 +274,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             include_top=True,
             weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax"
@@ -284,9 +284,9 @@ def pretrained_model(model_name, load_weight="imagenet"):
     if model_name == "InceptionV3":
         base_model = tf.keras.applications.InceptionV3(
             include_top=True,
-            weights="imagenet",
+            weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -296,9 +296,9 @@ def pretrained_model(model_name, load_weight="imagenet"):
     if model_name == "InceptionResNetV2":
         base_model = tf.keras.applications.InceptionResNetV2(
             include_top=True,
-            weights="imagenet",
+            weights=load_weight,
             input_tensor=None,
-            input_shape=None,
+            input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
             classifier_activation="softmax",
@@ -306,18 +306,14 @@ def pretrained_model(model_name, load_weight="imagenet"):
 
 
     x = base_model.output
-    #x = GlobalAveragePooling2D()(x)
-    # let's add a fully-connected layer
-    #x = Dense(1024, activation='relu')(x)
-    # and a logistic layer -- let's say we have 200 classes
-    predictions = tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')(x)
+    # x = GlobalAveragePooling2D()(x)
+    # add a fully-connected layer
+    x = tf.keras.layers.Dense(1000, activation='relu')(x)
+    # add logistic layer (complusory for predict classes)
+    predictions = tf.keras.layers.Dense(config.NUM_CLASSES, activation='softmax')(x)
 
     # this is the model we will train
     model = tf.keras.models.Model(inputs=base_model.input, outputs=predictions)
 
-    # first: train only the top layers (which were randomly initialized)
-    # i.e. freeze all convolutional InceptionV3 layers
-    #for layer in base_model.layers:
-    #    layer.trainable = False
 
     return model
