@@ -1,11 +1,15 @@
 
 import tensorflow as tf
 import config
+from models.testnet import TestNet
 
 def pretrained_model(model_name, load_weight="imagenet"):
-    # Xception (2017)
-    if model_name == "Test":
-        base_model = base_model = tf.keras.applications.MobileNetV2(
+    # TestNet
+    if model_name == "TestNet":
+        base_model = TestNet()
+    # MobileNetV2
+    if model_name == "MobileNetV2":
+        base_model = tf.keras.applications.MobileNetV2(
             include_top=True,
             weights=load_weight,
             input_tensor=None,
@@ -16,7 +20,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
         )
     # Xception (2017)
     if model_name == "Xception":
-        base_model = base_model = tf.keras.applications.Xception(
+        base_model = tf.keras.applications.Xception(
             include_top=True,
             weights=load_weight,
             input_tensor=None,

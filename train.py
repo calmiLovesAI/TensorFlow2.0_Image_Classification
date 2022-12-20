@@ -10,7 +10,7 @@ from models.pretrained_models import pretrained_model
 # USAGE: python train.py 
 #((before run! please set config.py file and line 26 of train.py))
 
-available_models=["Xception",
+available_models=["Xception","TestNet",
                   "EfficientNetB0", "EfficientNetB1", "EfficientNetB2",
                   "EfficientNetB3", "EfficientNetB4", "EfficientNetB5",
                   "EfficientNetB6", "EfficientNetB7",
@@ -24,11 +24,11 @@ available_models=["Xception",
                   ]
 
 def get_model():
-    model = pretrained_model(model_name="EfficientNetV2B1",
+    model = pretrained_model(model_name="TestNet",
                             load_weight=None)
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
-                  optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+                  optimizer=tf.keras.optimizers.Adam(learning_rate=0.005),
                   metrics=['accuracy', # add more metrics if you want
                             tf.keras.metrics.AUC(),
                             tf.keras.metrics.Precision(),
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     early_stop_callback = tf.keras.callbacks.EarlyStopping(
         monitor="loss",
-        patience=5,
+        patience=20,
         restore_best_weights=True
     )
     callback_list = [tensorboard, model_checkpoint_callback, early_stop_callback]
