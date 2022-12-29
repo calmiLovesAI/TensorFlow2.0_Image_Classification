@@ -3,6 +3,11 @@ import tensorflow as tf
 import config
 from models.testnet import TestNet
 
+if config.NUM_CLASSES == 2:
+    ACTIVATION = "sigmoid"
+else:
+    ACTIVATION = "softmax"
+
 def pretrained_model(model_name, load_weight="imagenet"):
     # TestNet
     if model_name == "TestNet":
@@ -16,7 +21,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
     # Xception (2017)
     if model_name == "Xception":
@@ -27,7 +32,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     # EfficientNetB0~B7 (2019)
@@ -39,7 +44,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB1":
@@ -50,7 +55,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB2":
@@ -61,7 +66,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB3":
@@ -72,7 +77,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB4":
@@ -83,7 +88,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB5":
@@ -94,7 +99,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB6":
@@ -105,7 +110,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "EfficientNetB7":
@@ -116,7 +121,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     # EfficientNetV2 B0 to B3 and S, M, L (2021)
@@ -128,7 +133,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -140,7 +145,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -152,7 +157,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -164,7 +169,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -176,7 +181,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -188,7 +193,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -200,7 +205,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
             include_preprocessing=True,
         )
 
@@ -213,7 +218,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
         )
 
     if model_name == "VGG19":
@@ -224,7 +229,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
         )
 
     # DenseNet Series (2017)
@@ -236,7 +241,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "DenseNet169":
@@ -247,7 +252,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
     
     if model_name == "DenseNet201":
@@ -258,7 +263,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     # NasNet Series (2018)
@@ -270,7 +275,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     if model_name == "NASNetMobile":
@@ -281,7 +286,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax"
+            classifier_activation=ACTIVATION
         )
 
     # InceptionV3 (2016)
@@ -293,7 +298,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
         )
 
     # InceptionResNetV2 (2016)
@@ -305,7 +310,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
             input_shape=(config.image_width,config.image_height,3),
             pooling=None,
             classes=1000,
-            classifier_activation="softmax",
+            classifier_activation=ACTIVATION,
         )
 
 
@@ -314,7 +319,7 @@ def pretrained_model(model_name, load_weight="imagenet"):
     # add a fully-connected layer
     x = tf.keras.layers.Dense(1000, activation='relu')(x)
     # add logistic layer (complusory for predict classes)
-    predictions = tf.keras.layers.Dense(config.NUM_CLASSES, activation='softmax')(x)
+    predictions = tf.keras.layers.Dense(config.NUM_CLASSES, activation=ACTIVATION)(x)
 
     # this is the model we will train
     model = tf.keras.models.Model(inputs=base_model.input, outputs=predictions)
