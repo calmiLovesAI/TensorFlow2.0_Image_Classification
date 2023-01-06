@@ -11,21 +11,12 @@ def test_single_image(img_dir, model):
     img_numpy = img_tensor.numpy()
     img_numpy = (np.expand_dims(img_numpy, 0))
     img_tensor = tf.convert_to_tensor(img_numpy, tf.float32)
-    # print(img_tensor.shape)
-    img = img_tensor / 255.0
-    prob = model(tf.image.resize(img,[config.image_width,config.image_height]))
+
+    # img = img_tensor / 255.0 # uncomment if model included rescale preprocessing layer
+    prob = model(tf.image.resize(img_tensor,[config.image_width,config.image_height]))
     # print(prob)
+
     classification = np.argmax(prob)
-
-    # print result
-    head, filename = os.path.split(img_dir)
-    result_s = "[result] "+ filename + " : " + str(classification)
-    print(result_s)
-
-    # save result
-    f = open(config.model_dir+"test_result.txt", "w")
-    f.write(result_s)
-    f.close()
 
     return classification
 
