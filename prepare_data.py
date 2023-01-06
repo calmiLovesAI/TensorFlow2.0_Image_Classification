@@ -4,7 +4,10 @@ import config
 def get_datasets():
     # Preprocess the dataset
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
-        rescale=1.0 / 255.0
+        zoom_range=0.5,
+        horizontal_flip=True,
+        vertical_flip=True,
+        # rescale=1.0 / 255.0
     )
 
     train_generator = train_datagen.flow_from_directory(config.train_dir,
@@ -16,7 +19,10 @@ def get_datasets():
                                                         class_mode="categorical")
 
     valid_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
-        rescale=1.0 /255.0
+        zoom_range=0.5,
+        horizontal_flip=True,
+        vertical_flip=True,
+        # rescale=1.0 /255.0
     )
     valid_generator = valid_datagen.flow_from_directory(config.valid_dir,
                                                         target_size=(config.image_height, config.image_width),
@@ -27,7 +33,7 @@ def get_datasets():
                                                         class_mode="categorical"
                                                         )
     test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
-        rescale=1.0 /255.0
+        # rescale=1.0 /255.0
     )
     test_generator = test_datagen.flow_from_directory(config.test_dir,
                                                       target_size=(config.image_height, config.image_width),
