@@ -12,7 +12,7 @@ def test_single_image(img_dir, model):
     img_numpy = (np.expand_dims(img_numpy, 0))
     img_tensor = tf.convert_to_tensor(img_numpy, tf.float32)
 
-    # img = img_tensor / 255.0 # uncomment if model included rescale preprocessing layer
+    # img_tensor = img_tensor / 255.0 # uncomment if model included rescale preprocessing layer
     prob = model(tf.image.resize(img_tensor,[config.image_width,config.image_height]))
     # print(prob)
 
